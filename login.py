@@ -18,7 +18,7 @@ def cargar_usuario():
     return usuarios
 
 def agregar_usuario(usuario, clave):
-    with open("usuarios.txt", "a") as archivo: 
+    with open("usuario.txt", "a") as archivo: 
         archivo.write(f"{usuario}, {clave}\n")  
 
 def inicio():
@@ -34,10 +34,7 @@ def inicio():
         print("Usuario o contraseña incorrecta.")  
         continuar()
         os.system("cls")
-        
-        return False
+    return False
 def main():
     inicio()
- 
-
 main()
