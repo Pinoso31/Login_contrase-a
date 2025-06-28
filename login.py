@@ -1,6 +1,6 @@
 #Utilizando contraseña para ingresar al programa
-ARCHIVO = "estudiantes.txt"
-CLAVE = "pepito123"
+ARCHIVO = "usuarios.txt"
+CLAVE = "casique"
 import getpass
 import os
 import pwinput
@@ -9,7 +9,7 @@ def continuar():
   input("Enter para continuar") 
 
 def cargar_usuario():
-    usuarios = {} 
+    usuarios = []
     if os.path.exists("usuarios.txt"): 
         with open("usuarios.txt", "r") as archivo:
             for linea in archivo:
@@ -18,10 +18,10 @@ def cargar_usuario():
     return usuarios
 
 def agregar_usuario(usuario, clave):
-    with open("usuario.txt", "a") as archivo: 
+    with open("usuarios.txt", "a") as archivo: 
         archivo.write(f"{usuario}, {clave}\n")  
 
-def inicio():
+def main():
     print("INICIO DE SESION")
     usuarios = cargar_usuario()
     usuario = input("Usuario: ")
@@ -35,6 +35,4 @@ def inicio():
         continuar()
         os.system("cls")
     return False
-def main():
-    inicio()
 main()
